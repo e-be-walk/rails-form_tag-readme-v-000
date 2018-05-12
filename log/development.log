@@ -285,3 +285,21 @@ NameError (undefined local variable or method `redirect_to_posts_path' for #<Pos
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.8ms)
+
+
+Started POST "/posts" for 208.103.68.70 at 2018-05-12 22:22:30 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T2tZg9qg05HDVmiSGRtBJo9XCSN6nbrJzZubsweR9RoZDGY6692rXS4Fkp4eWQDNmaxQUuYd6kTyeGmFOq3LdQ==", "post"=>{"title"=>"latte", "description"=>"would love one"}, "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (67.9ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "latte"], ["description", "would love one"], ["created_at", "2018-05-12 22:22:30.602614"], ["updated_at", "2018-05-12 22:22:30.602614"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 70.5ms)
+
+NameError (undefined local variable or method `redirect_to_posts_path' for #<PostsController:0x007f454dbe90f8>):
+  app/controllers/posts_controller.rb:11:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.6ms)

@@ -11,5 +11,5 @@ class PostsController < ApplicationController
     
     redirect_to_posts_path
   end
-  
+
 end

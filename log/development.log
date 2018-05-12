@@ -322,3 +322,17 @@ Did you mean?  redirect_to):
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.7ms)
+
+
+Started POST "/posts" for 208.103.68.70 at 2018-05-12 22:24:24 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T2tZg9qg05HDVmiSGRtBJo9XCSN6nbrJzZubsweR9RoZDGY6692rXS4Fkp4eWQDNmaxQUuYd6kTyeGmFOq3LdQ==", "post"=>{"title"=>"latte", "description"=>"would love one"}, "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "latte"], ["description", "would love one"], ["created_at", "2018-05-12 22:24:24.483867"], ["updated_at", "2018-05-12 22:24:24.483867"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 3.3ms)
+
+NameError (undefined local variable or method `redirect_to_posts_path' for #<PostsController:0x007f453c519d38>):
+  app/controllers/posts_controller.rb:11:in `create'
+
+

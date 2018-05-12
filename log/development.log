@@ -340,3 +340,17 @@ NameError (undefined local variable or method `redirect_to_posts_path' for #<Pos
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.8ms)
+
+
+Started POST "/posts" for 208.103.68.70 at 2018-05-12 22:25:48 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T2tZg9qg05HDVmiSGRtBJo9XCSN6nbrJzZubsweR9RoZDGY6692rXS4Fkp4eWQDNmaxQUuYd6kTyeGmFOq3LdQ==", "post"=>{"title"=>"latte", "description"=>"would love one"}, "commit"=>"Submit Post"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "latte"], ["description", "would love one"], ["created_at", "2018-05-12 22:25:48.678339"], ["updated_at", "2018-05-12 22:25:48.678339"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.4ms)
+
+NameError (undefined local variable or method `redirect_to_posts_path' for #<PostsController:0x007f453c3ba848>):
+  app/controllers/posts_controller.rb:11:in `create'
+
+

@@ -311,3 +311,14 @@ Processing by PostsController#create as HTML
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "latte"], ["description", "would love one"], ["created_at", "2018-05-12 22:23:04.499645"], ["updated_at", "2018-05-12 22:23:04.499645"]]
   [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 4.7ms)
+
+NameError (undefined local variable or method `redirect_to_index' for #<PostsController:0x007f453d147b00>
+Did you mean?  redirect_to):
+  app/controllers/posts_controller.rb:11:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.7ms)
